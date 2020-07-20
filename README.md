@@ -1,6 +1,13 @@
 # Box + React + Node
 This app was created to provide a boilerplate example of the Box Content Explorer built within a React.JS app integrated with a Node.JS express server
 
+# How it works
+* React app running on localhost:3000
+* Express app running on localhost:5000 (or any unused port)
+* When the header component mounts, an API call is made to /token, served by Express
+* The express app uses a config file provided by the Developer Console to return a token
+* Once the state is updated with the token, the UI Element is rendered
+
 # Run this boilerplate
 * Clone the repo
 * Add a [configuration file](https://developer.box.com/guides/authentication/jwt/with-sdk/) `config_from_box.json` to the application root
