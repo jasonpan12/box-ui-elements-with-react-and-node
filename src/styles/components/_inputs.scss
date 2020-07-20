@@ -1,0 +1,10 @@
+.text-input {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #cacccd;
+  height: 50px;
+  padding: $s-size;
+  font-size: $font-size-large;
+  font-weight: 300;
+}
