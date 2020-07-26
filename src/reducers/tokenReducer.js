@@ -4,7 +4,8 @@ const updateTokenAction = 'UPDATE_TOKEN';
 const tokenReducer = (state, action) => {
     switch (action.type) {
 		case updateTokenAction:
-			return {token: action.token}
+			return {...state,
+				token: action.token}
         default:
             return state
     }

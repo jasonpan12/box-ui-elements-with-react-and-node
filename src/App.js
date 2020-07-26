@@ -5,6 +5,7 @@ import UIElement from './components/UIElement';
 import Header from "./components/Header";
 import tokenReducer, {updateTokenAction} from './reducers/tokenReducer';
 import BoxContext from './context/BoxContext';
+import UserInfo from "./components/UserInfo";
 
 const axios = require('axios');
 
@@ -30,6 +31,7 @@ function App() {
         <div className="App content-container">
             <BoxContext.Provider value={{state, dispatch}}>
             <Header/>
+            {/*<UserInfo/>*/}
             <UIElement/>
             </BoxContext.Provider>
         </div>
