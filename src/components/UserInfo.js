@@ -26,12 +26,10 @@ export default () => {
 	, [state.token])
 
 	return (
-		userInfo ?
 		<div>
-			<p>Current User: {userInfo.login}</p>
-		</div> :
-		<div>
-
+			{
+				userInfo ? `Current User: ${userInfo.login}` : 'Loading User Info...'
+			}
 		</div>
 	);
 }

@@ -31,7 +31,7 @@ function App() {
         <div className="App content-container">
             <BoxContext.Provider value={{state, dispatch}}>
             <Header/>
-            {/*<UserInfo/>*/}
+            {state.token && <UserInfo/>}
             <UIElement/>
             </BoxContext.Provider>
         </div>
