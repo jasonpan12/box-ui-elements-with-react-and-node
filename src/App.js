@@ -1,21 +1,36 @@
-import React, {useState} from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useReducer} from 'react';
 import './App.css';
 import './styles/styles.scss';
 import UIElement from './components/UIElement';
-import Header from "./components/HeaderAndAuth";
+import Header from "./components/Header";
+import tokenReducer, {updateTokenAction} from './reducers/tokenReducer';
 import BoxContext from './context/BoxContext';
 
+const axios = require('axios');
+
 function App() {
-    let [token, setToken] = useState('')
+    let initialState = {
+        token: null
+    }
+
+    let [state, dispatch] = useReducer(tokenReducer, initialState);
+
+    // Get a token when the app loads
+   	useEffect(() => {
+   		axios.get('/token')
+   			.then((response) => {
+   				dispatch({
+   					type: updateTokenAction,
+   					token: response.data.token
+   				});
+   			})
+   	},[])
 
     return (
         <div className="App content-container">
-            <BoxContext.Provider value={{token, setToken}}>
+            <BoxContext.Provider value={{state, dispatch}}>
             <Header/>
-            <div className="ui-element">
-                {token ? <UIElement/> : <div></div>}
-            </div>
+            <UIElement/>
             </BoxContext.Provider>
         </div>
     );

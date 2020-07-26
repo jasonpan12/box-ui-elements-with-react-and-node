@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const publicPath = path.join(__dirname, '..', 'build');
-const port = process.env.PORT || 5000; // Use Heroku's port, else 3000
+const port = process.env.PORT || 5000;
 const BoxSDK = require('box-node-sdk');
 
 // Process Box credentials

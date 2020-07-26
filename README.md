@@ -4,9 +4,9 @@ This app was created to provide a boilerplate example of the Box Content Explore
 # How it works
 * React app running on localhost:3000
 * Express app running on localhost:5000 (or any unused port)
-* When the header component mounts, an API call is made to /token, served by Express
+* When the main App component mounts, an API call is made to /token, served by Express
 * The express app uses a config file provided by the Developer Console to return a token
-* Once the state is updated with the token, the UI Element is rendered
+* Once the state is updated with the token, the UIElement component will return a Content Explorer
 
 # Run this boilerplate
 * Clone the repo
@@ -21,7 +21,7 @@ This app was created to provide a boilerplate example of the Box Content Explore
 * Import the Content Explorer component, making sure to install the peer dependencies
 * Create an Express app, with one route serving index.html and the other route returning a downscoped access token (server/server.js)
 * Have the app run on any port not 3000, as create-react-app's `yarn start` automatically uses port 3000
-* Configure the React app to make a request to the token route (HeaderAndAuth.js)
+* Configure the React app to make a request to the token route (Header.js)
 * Configure package.json to proxy requests to localhost:$port (package.json)
 * Use `nodemon server/server.js` to start the Express server
 * Use `yarn start` to start the React app
